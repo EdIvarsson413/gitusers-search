@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.grid-arias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "a b b"
+    "a c c"
+    "d d d"
+    "e e e"
+    "f f f";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.seccion-logo {
+    grid-area: a;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.seccion-usuario{
+    grid-area: b;
+}
+
+.seccion-fecha {
+    grid-area: c;
+}
+
+.seccion-descripcion {
+    grid-area: d;
+}
+
+.seccion-datos {
+    grid-area: e;
+}
+
+.seccion-social {
+    grid-area: f;
+}
+
+@media (min-width: 768px) {
+    .grid-arias {
+        grid-template-areas: 
+        "a b c c"
+        "a d d d"
+        "a e e e"
+        "a f f f";
+    }
 }
