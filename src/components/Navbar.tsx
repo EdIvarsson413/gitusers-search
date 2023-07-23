@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import LightIcon from '@/components/icons/LightIcon'
 import DarkIcon from '@/components/icons/DarkIcon'
 
+// Configuración para traer el modo oscuro del sistema
 const modoInicial = () => {
     if( localStorage.getItem( "theme" ) ) {
         return localStorage.getItem( "theme" ) as "light" | "dark";
@@ -12,8 +13,10 @@ const modoInicial = () => {
 }
 
 const Navbar = () => {
+    // Se carga el tema en un string
     const [ modo, setModo] = useState<"light" | "dark">(modoInicial);
 
+    // Se actualiza constantemente el tema con la varibale de localStorage y el modo de clases de Tailwinds
     useEffect(() => {
         if( modo === 'dark' ) document.documentElement.classList.add( 'dark' );
         else document.documentElement.classList.remove( 'dark' );
