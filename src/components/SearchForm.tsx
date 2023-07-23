@@ -15,7 +15,8 @@ const SearchForm = ( { getUser }: Props ) => {
         <form
             onSubmit={handleSubmit}
             autoComplete='off'
-            className='flex flex-wrap gap-3 items-center bg-gray-800 p-3 rounded-xl justify-center'
+            className='flex flex-wrap gap-3 items-center dark:bg-gray-800 bg-gray-200 shadow-xl 
+                    dark:shadow-none p-3 rounded-xl justify-center'
         >
             <span className='min-w-[20px]'>
                 <SearchIcon className='fill-blue-500 ml-3' width={25} height={25} />
@@ -23,7 +24,8 @@ const SearchForm = ( { getUser }: Props ) => {
             <input
                 name='username'
                 type="text"
-                className='bg-transparent flex-1 p-2 text-white focus:outline-none placeholder-white h-[50px]'
+                className='bg-transparent flex-1 p-2 dark:text-white text-black focus:outline-none 
+                            dark:placeholder-white placeholder-gray-400 h-[50px]'
                 placeholder='Buscar usuario de GitHub'
             />
             <button

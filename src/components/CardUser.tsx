@@ -1,5 +1,4 @@
 import Image from "next/image"
-import avatar from '@/assets/imgs/avatar.jpg'
 import LocationIcon from '@/components/icons/LocationIcon'
 import CompanyIcon from '@/components/icons/CompanyIcon'
 import TwitterIcon from '@/components/icons/TwitterIcon'
@@ -13,7 +12,9 @@ interface Props {
 
 const CardUser = ( { user }: Props ) => {
     return (
-        <article className="bg-gray-800 text-white p-7 my-7 rounded-xl grid-arias">
+        <article className="dark:bg-gray-800 bg-gray-200 dark:text-white text-black 
+                            dark:shadow-none shadow-xl p-7 my-7 rounded-xl grid-arias"
+        >
             {/* Avatar del usuario */}
             <div className="seccion-logo">
                 <Image 
@@ -40,7 +41,7 @@ const CardUser = ( { user }: Props ) => {
 
             {/* Descripcion del usuario */}
             <p className={`seccion-descripcion my-3 text-justify 
-                        ${user.bio ? 'text-white' : 'text-gray-600'}`}
+                        ${user.bio ? 'dark:text-white text-black' : 'dark:text-gray-600 text-gray-400'}`}
             >
                 { user.bio ? user.bio : 'Sin Descripción' }
             </p>
@@ -48,7 +49,7 @@ const CardUser = ( { user }: Props ) => {
 
             {/* Datos (repos, seguidores y siguiendo) */}
             <div className="seccion-datos flex sm:justify-center sm:gap-16 md:justify-between 
-                        bg-slate-900 p-6 my-3 w-full text-center rounded-xl">
+                        dark:bg-slate-900 bg-gray-300 p-6 my-3 w-full text-center rounded-xl">
                 <section className="text-sm">
                     <span>Repos</span>
                     <br />
@@ -71,32 +72,56 @@ const CardUser = ( { user }: Props ) => {
             {/* Otros datos  */}
             <div className="seccion-social grid grid-cols-2">
                 <section className="flex space-x-2 mt-4 items-center">
-                    <i><LocationIcon className={`w-5 h-5 ${user.location ? 'fill-white' : 'fill-gray-600'}`}/></i>
-                    <p className={`truncate ... ${user.location ? 'text-white' : 'text-gray-600'}`}>
+                    <i>
+                        <LocationIcon className={`w-5 h-5 
+                                        ${user.location ? 'dark:fill-white fill-black' : 'dark:fill-gray-600 fill-gray-400'}`}
+                        />
+                    </i>
+                    <p className={`truncate ... 
+                                    ${user.location ? 'dark:text-white text-black' : 'dark:text-gray-600 text-gray-400'}`}
+                    >
                         {
                             user.location ? user.location : 'No Disponible'
                         }
                     </p>
                 </section>
                 <section className="flex space-x-2 mt-4 items-center">
-                    <i><LinkIcon className={`w-5 h-5 ${user.blog ? 'fill-white' : 'fill-gray-600'}`}/></i>
-                    <p className={`truncate ... ${user.blog ? 'text-white' : 'text-gray-600'}`}>
+                    <i>
+                        <LinkIcon className={`w-5 h-5 
+                                        ${user.blog ? 'dark:fill-white fill-black' : 'dark:fill-gray-600 fill-gray-400'}`}
+                        />
+                    </i>
+                    <p className={`truncate ... 
+                                    ${user.blog ? 'dark:text-white text-black' : 'dark:text-gray-600 text-gray-400'}`}
+                    >
                         {
                             user.blog ? user.blog : 'No Disponible'
                         }
                     </p>
                 </section>
                 <section className="flex space-x-2 mt-4 items-center">
-                    <i><TwitterIcon className={`w-5 h-5 ${user.twitter_username ? 'fill-white' : 'fill-gray-600'}`}/></i>
-                    <p className={`truncate ... ${user.twitter_username ? 'text-white' : 'text-gray-600'}`}>
+                    <i>
+                        <TwitterIcon className={`w-5 h-5 
+                                    ${user.twitter_username ? 'dark:fill-white fill-black' : 'dark:fill-gray-600 fill-gray-400'}`}
+                        />
+                    </i>
+                    <p className={`truncate ... 
+                                    ${user.twitter_username ? 'dark:text-white text-black' : 'dark:text-gray-600 text-gray-400'}`}
+                    >
                         {
                             user.twitter_username ? user.twitter_username : 'No Disponible'
                         }
                     </p>
                 </section>
                 <section className="flex space-x-2 mt-4 items-center">
-                    <i><CompanyIcon className={`w-5 h-5 ${user.company ? 'fill-white' : 'fill-gray-600'}`}/></i>
-                    <p className={`truncate ... ${user.company ? 'text-white' : 'text-gray-600'}`}>
+                    <i>
+                        <CompanyIcon className={`w-5 h-5 
+                                    ${user.company ? 'dark:fill-white fill-black' : 'dark:fill-gray-600 fill-gray-400'}`}
+                        />
+                        </i>
+                    <p className={`truncate ... 
+                                    ${user.company ? 'dark:text-white text-black' : 'dark:text-gray-600 text-gray-400'}`}
+                    >
                         {
                             user.company ? user.company : 'No Disponible'
                         }

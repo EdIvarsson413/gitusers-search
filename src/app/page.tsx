@@ -27,7 +27,7 @@ const Home = () => {
   }
   
   return (
-    <div className=' max-h-screen'>
+    <div className='max-h-screen'>
       <SearchForm getUser={getUser}/>
       {
         // Si el usuario exite
